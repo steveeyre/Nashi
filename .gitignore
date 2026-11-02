@@ -1,0 +1,19 @@
+# Gradle / Android 构建产物
+.gradle/
+build/
+*/build/
+.kotlin/
+local.properties
+
+# IDE
+.idea/
+*.iml
+
+# 工具与临时目录
+.rebon/
+.testlogs/
+*.log
+
+# 同步服务器运行时数据(状态快照、挂载卷)
+sync-server/data/
+sync-server/state.json

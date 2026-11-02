@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">纳什 Nashi</string>
+
+    <!-- 通用 -->
+    <string name="error_unknown">未知错误</string>
+
+    <!-- 备份与导入导出状态 -->
+    <string name="status_backup_running">正在备份…</string>
+    <string name="status_backup_done">已备份：%1$s</string>
+    <string name="status_backup_failed">备份失败：%1$s</string>
+    <string name="status_backup_last">上次备份：%1$s</string>
+    <string name="status_backup_position">%1$s · 位置 %2$s</string>
+    <string name="status_backup_none">还没有自动备份</string>
+    <string name="status_import_json_added">导入 JSON 成功，新增 %1$d 行</string>
+    <string name="status_import_json_none">导入 JSON 成功，无新增数据(已是最新)</string>
+    <string name="status_import_zip_added">导入备份包成功(含照片)，新增 %1$d 行</string>
+    <string name="status_import_zip_none">导入备份包成功，无新增数据(已是最新)</string>
+    <string name="status_export_zip_encrypted">已导出加密备份包，共打包 %1$d 张照片；恢复时需要同一口令</string>
+    <string name="status_export_zip_plain">已导出备份包(未加密)，共打包 %1$d 张照片</string>
+    <string name="status_import_csv">导入 GameSorter CSV 成功，共 %1$d 行</string>
+    <string name="status_import_failed">导入失败：%1$s</string>
+
+    <!-- 分类 / 标签管理 -->
+    <string name="status_tag_add_failed">新增标签失败：%1$s</string>
+    <string name="status_tag_rename_failed">重命名标签失败：%1$s</string>
+    <string name="status_tag_delete_failed">删除标签失败：%1$s</string>
+    <string name="status_category_add_failed">新增分类失败：%1$s</string>
+    <string name="status_category_rename_failed">重命名分类失败：%1$s</string>
+    <string name="status_category_delete_failed">删除分类失败：%1$s</string>
+
+    <!-- 同步与家庭 -->
+    <string name="status_family_created">已创建家庭 %1$s…，可生成邀请码邀请家人</string>
+    <string name="status_family_init_failed">初始化家庭失败：%1$s</string>
+    <string name="status_invite_created">邀请码：%1$s（同一家庭的其他设备用它加入）</string>
+    <string name="status_invite_failed">生成邀请码失败：%1$s</string>
+    <string name="status_joined_family">已加入家庭 %1$s…</string>
+    <string name="status_join_failed">加入家庭失败：%1$s</string>
+    <string name="status_sync_done">同步完成：推送 %1$d 条，拉取 %2$d 条，冲突 %3$d 条</string>
+    <string name="status_sync_skipped">未同步：%1$s</string>
+    <string name="status_sync_failed">同步失败：%1$s</string>
+    <string name="status_members_failed">读取设备与邀请码失败：%1$s</string>
+    <string name="status_invite_revoked">邀请码已撤销</string>
+    <string name="status_invite_revoke_failed">撤销邀请码失败：%1$s</string>
+    <string name="status_device_kicked">已将设备踢出家庭，该设备的 token 立即失效</string>
+    <string name="status_device_kick_failed">踢出设备失败：%1$s</string>
+
+    <!-- 设备与邀请码管理 -->
+    <string name="members_open">设备与邀请码管理</string>
+    <string name="members_title">设备与邀请码</string>
+    <string name="members_devices">已加入的设备</string>
+    <string name="members_invites">有效邀请码</string>
+    <string name="members_empty">暂无</string>
+    <string name="members_this_device">本机 %1$s…</string>
+    <string name="members_device_short">%1$s…</string>
+    <string name="members_kick">踢出</string>
+    <string name="members_revoke">撤销</string>
+    <string name="members_expires">到期 %1$s</string>
+    <string name="members_close">关闭</string>
+</resources>

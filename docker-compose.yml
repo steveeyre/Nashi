@@ -1,0 +1,14 @@
+services:
+  nashi-sync:
+    build: ./sync-server
+    ports: ["8080:8080"]
+    environment:
+      # 状态快照 state.json 写在此目录; 挂卷后重建容器也不丢家庭与数据。
+      DATA_DIR: /data
+      PORT: "8080"
+    volumes:
+      - nashi-data:/data
+    restart: unless-stopped
+
+volumes:
+  nashi-data: {}

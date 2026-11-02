@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  自建同步服务器通常跑在局域网 http://192.168.x.x:8080, 主机/IP 由用户在设置里自由填写,
+  无法用 domain-config 白名单覆盖, 因此经用户确认后在此全局放行明文流量。
+  权衡: 本应用不应把同步端口暴露到公网; 有条件时请改用 https:// 地址与反向代理。
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
