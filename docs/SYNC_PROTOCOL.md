@@ -51,16 +51,17 @@
   kotlinx-serialization-json 1.7.3、logback-classic 1.4.14；需 JDK 17。
 - 本地构建（已验证：Gradle 8.7 + Microsoft JDK 17.0.20）：
   `cd sync-server` 后
-  `& C:/Users/ASUS/tools/gradle-8.7/bin/gradle.bat build -x test --console=plain --no-daemon`
+  `gradle build -x test --console=plain --no-daemon`
   —— 输出 `BUILD SUCCESSFUL`。
 - 本地运行（内存存储，无需 Postgres）：
   同目录 `gradle run`（mainClass `com.nashi.sync.ServerKt`），监听 `:8080`。
 - 容器运行：根目录 `docker compose up --build nashi-sync`（服务名 `nashi-sync`，
   端口 `8080:8080`；直连 `sync-server/Dockerfile`，multi-stage eclipse-temurin 17，
-  用 `installDist` 产物启动 `bin/sync-server`）。注意：当前 `Dockerfile` 构建阶段
-  仍引用根工程 wrapper（`./gradlew :sync-server:installDist` 回退 `gradle installDist`），
-  且 `docker-compose.yml` 附带 `db`（postgres:16）与 `DATABASE_URL`，但服务端当前
-  为纯内存实现，并未读取该环境变量——见下“生产切 Postgres 步骤”。
+  用 `installDist` 产物启动 `bin/sync-server`）。当前服务端为纯内存实现，
+  每次变更把整份状态原子写盘到 `DATA_DIR/state.json`，`DATABASE_URL` 未被读取
+  ——见下“生产切 Postgres 步骤”。注意：`Dockerfile` 仍先尝试 `./gradlew
+  :sync-server:installDist` 再回退 `gradle installDist`，而构建上下文是
+  `sync-server/` 且镜像内未装 gradle，容器构建路径尚未验证。
 - 路由一览（`Server.kt#syncModule`）：`GET /health`、`POST /family/init`、
   `POST /family/invite`、`POST /family/join`、`GET /sync/pull?since=&limit=`、
   `POST /sync/push`。

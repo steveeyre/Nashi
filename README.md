@@ -1,6 +1,6 @@
 # 纳什 Nashi — 家庭物品收纳
 
-Kotlin + Jetpack Compose，本地优先（Room）+ 自托管同步（Ktor + Postgres）。
+Kotlin + Jetpack Compose，本地优先（Room）+ 自托管同步（Ktor，服务端以 JSON 快照落盘）。
 本文件描述的是**当前代码实际状态**，不是设计愿景；未实现或有取舍的地方写在「已知限制」。
 
 ## 技术栈
